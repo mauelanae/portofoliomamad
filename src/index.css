@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'madesunflower';
+  src: url('./assets/font/MADE Sunflower PERSONAL USE.otf') format('otf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
