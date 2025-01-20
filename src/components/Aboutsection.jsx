@@ -32,10 +32,10 @@ const Aboutsection = forwardRef((props, ref) => {
                 <div className='flex items-center justify-center'>
                     <div className='absolute right-0 top-[1200px] lg:top-[1620px] md:right-32 space-y-2 lg:space-y-8'>
                         <div className='w-56 h-16 lg:w-96 lg:h-28 flex items-center justify-center rounded-full shadow-black shadow-lg bg-[#FFDDAE] text-md lg:text-2xl font-bold'>
-                            BACKEND DEVELOPER
+                            FRONTEND DEVELOPER
                         </div>
                         <div className='w-40 h-14 lg:w-80 lg:h-24 flex items-center justify-center rounded-full shadow-black shadow-lg bg-[#8FD0FF] text-md lg:text-2xl font-bold'>
-                            DESIGN GRAPICH
+                            UI/UX GRAPICH
                         </div>
                     </div>
                     <div className='absolute left-0 top-[1200px] lg:top-[1620px] md:left-32 space-y-2 lg:space-y-8 flex flex-col items-end lg:flex lg:flex-col lg:items-end'>
