@@ -110,109 +110,87 @@ const Projectsection = forwardRef((props, ref) => {
 
   const { projectsRef } = ref
   return (
-    <main className=""> {/* Tambah overflow-x-hidden untuk mencegah horizontal scroll */}
-      <section
-        ref={projectsRef}
-        id="projects"
-      >
-        <div className="bg-white text-black relative px-24">
+    <main className="overflow-x-hidden">
+      <section ref={projectsRef} id="projects">
+        <div className="bg-white text-black relative px-4 md:px-10 lg:px-24 py-8 md:py-16">
           {/* Category Selector */}
-          <div className="absolute top-32 z-10">
-            <div className="relative">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="px-6 py-3 bg-[#FFDDAE] backdrop-blur rounded-full flex items-center space-x-2 text-black font-bold hover:bg-[#FFDDAE]/70 transition-colors"
-              >
-                <span>{selectedCategory}</span>
-                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-              </button>
+          <div className="relative lg:absolute mb-8 lg:-mb-24 z-50">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="px-6 py-3 bg-[#FFDDAE] backdrop-blur rounded-full flex items-center space-x-2 text-black font-bold hover:bg-[#FFDDAE]/70 transition-colors w-full md:w-auto"
+            >
+              <span>{selectedCategory}</span>
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-200 ${
+                  isOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
 
-              {isOpen && (
-                <div className="absolute top-full mt-2 w-full bg-white/10 backdrop-blur-2xl rounded-lg overflow-hidden">
-                  {categories.map((category) => (
-                    <button
-                      key={category.name}
-                      onClick={() => handleCategorySelect(category)}
-                      className="w-full px-6 py-3 text-left hover:bg-[#FFDDAE] flex items-center space-x-2"
-                    >
-                      <category.icon className="w-5 h-5" />
-                      <span>{category.name}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+            {isOpen && (
+              <div className="absolute top-full mt-2 w-full bg-white/10 backdrop-blur-2xl rounded-lg overflow-hidden shadow-md z-10">
+                {categories.map((category) => (
+                  <button
+                    key={category.name}
+                    onClick={() => handleCategorySelect(category)}
+                    className="w-full px-6 py-3 text-left hover:bg-[#FFDDAE] flex items-center space-x-2"
+                  >
+                    <category.icon className="w-5 h-5" />
+                    <span>{category.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Project Display */}
-          <div className="relative w-full h-screen">
-            <div className='flex justify-between'>
-              {/* Project Content */}
-              <div className="relative h-full flex top-64">
-                <div className="max-w-4xl">
-                  <div className="space-y-1">
-                    <h1 className="text-5xl md:text-7xl font-madesun">{currentProject.title1}</h1>
-                    <h2 className="text-2xl md:text-4xl font-bold">{currentProject.title2}</h2>
-                    <p className="text-lg max-w-2xl">
-                      {currentProject.description}
-                    </p>
-                    <div className="flex-col space-y-2 items-center">
-                      <div className="w-[567px] h-[50px] top-[340px] absolute">
-                        <div className="w-[567px] h-[50px] left-0 top-0 absolute bg-[#E2E2E1] rounded-[20px]" />
-                        <div className="w-[257px] h-[50px] left-0 top-0 absolute bg-[#FFDDAE] rounded-[20px] shadow" />
-                        <div className="left-[87px] top-[7px] absolute text-black text-3xl font-medium font-madesun ">Client</div>
-                        <div className="left-[300px] top-[7px] absolute text-black text-3xl font-medium ">{currentProject.client}</div>
-                      </div>
-                      <div className="w-[600px] h-[50px] top-[400px] absolute">
-                        <div className="w-[600px] h-[50px] left-0 top-0 absolute bg-[#E2E2E1] rounded-[20px]" />
-                        <div className="w-[257px] h-[50px] left-0 top-0 absolute bg-[#FFDDAE] rounded-[20px] shadow" />
-                        <div className="left-[87px] top-[7px] absolute text-black text-3xl font-medium font-madesun ">Role</div>
-                        <div className="left-[300px] top-[7px] absolute text-black text-3xl font-medium ">{currentProject.role}</div>
-                      </div>
-                    </div>
-                  </div>
+          <div className="relative flex flex-col lg:flex-row lg:items-center space-y-0 lg:space-y-0 gap-8">
+            {/* Project Content */}
+            <div className="lg:w-1/2 space-y-4">
+              <h1 className="text-3xl md:text-6xl font-bold font-madesun">{currentProject.title1}</h1>
+              <h2 className="text-xl md:text-2xl font-bold">{currentProject.title2}</h2>
+              <p className="text-sm md:text-base lg:text-lg">{currentProject.description}</p>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+                  <span className="font-semibold font-madesun text-2xl">Client:</span>
+                  <span>{currentProject.client}</span>
+                </div>
+                <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg">
+                  <span className="font-semibold font-madesun text-2xl">Role:</span>
+                  <span>{currentProject.role}</span>
                 </div>
               </div>
-              {/* Image */}
-              <div className='relative h-screen'>
-                <img
-                  src={currentProject.image}
-                  alt={currentProject.title}
-                  className={`object-contain ${currentProject.image === web1 || currentProject.image === web2 ? 'my-32 w-[700px]' : 'w-full h-full'
-                    }`}
-                />
-              </div>
             </div>
-            {/* Navigation Arrows */}
+
+            {/* Image */}
+            <div className="flex justify-center">
+              <img
+                src={currentProject.image}
+                alt={currentProject.title}
+                className="object-cover max-w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+
+          {/* Navigation Arrows */}
+          <div className="flex justify-between mt-8">
             <button
               onClick={prevSlide}
-              className="absolute left-4 top-[800px] -translate-y-1/2 p-2 bg-[#FFDDAE]  backdrop-blur rounded-full hover:bg-[#FFDDAE]/70 transition-colors"
+              className="p-3 bg-[#FFDDAE] rounded-full hover:bg-[#FFDDAE]/70 transition-colors"
             >
-              <ChevronLeft className="w-8 h-8 text-black" />
+              <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextSlide}
-              className="absolute right-4 top-[800px] -translate-y-1/2 p-2 bg-[#FFDDAE] backdrop-blur rounded-full hover:bg-[#FFDDAE]/70 transition-colors"
+              className="p-3 bg-[#FFDDAE] rounded-full hover:bg-[#FFDDAE]/70 transition-colors"
             >
-              <ChevronRight className="w-8 h-8 text-black" />
+              <ChevronRight className="w-6 h-6" />
             </button>
-
-            {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
-              {portfolioContent[selectedCategory].map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${currentSlide === index ? 'bg-[#FFDDAE] w-8' : 'bg-[#FFDDAE]'
-                    }`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
     </main>
-  )
+  );
 })
 
 Projectsection.displayName = 'Projectsection'
