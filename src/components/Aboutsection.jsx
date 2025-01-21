@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
-import img1 from '../assets/about1.svg'
-import img2 from '../assets/about2.svg'
+import img1 from '../assets/abou1.webp'
+import img2 from '../assets/about2.webp'
 import img3 from '../assets/about3.svg'
 import img4 from '../assets/about4.svg'
 

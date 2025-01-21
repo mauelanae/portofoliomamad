@@ -1,12 +1,13 @@
 import React, { forwardRef, useState } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Layout, Code, Palette, Icon, icons } from 'lucide-react';
-import ui1 from '../assets/project/uidesign1.png'
-import ui2 from '../assets/project/uidesign2.png'
-import ui3 from '../assets/project/uidesign3.png'
-import ui4 from '../assets/project/uidesign4.png'
-import ui5 from '../assets/project/uidesign5.png'
-import web1 from '../assets/project/webdesign1.png'
-import web2 from '../assets/project/webdesign2.png'
+import ui1 from '../assets/project/uidesign1.jpg'
+import ui2 from '../assets/project/uidesign2.webp'
+import ui3 from '../assets/project/uidesign3.webp'
+import ui4 from '../assets/project/uidesign4.webp'
+import ui5 from '../assets/project/uidesign5.webp'
+import ui6 from '../assets/project/uidesign6.webp'
+import web1 from '../assets/project/webdesign1.webp'
+import web2 from '../assets/project/webdesign2.webp'
 
 const Projectsection = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -65,6 +66,14 @@ const Projectsection = forwardRef((props, ref) => {
         image: ui5,
         client: 'Zilenial',
         role: 'UI/UX DESIGN',
+      },
+      {
+        title1: 'Web UI Design',
+        title2: 'Website Mobile Booking Barbershop',
+        description: 'This UI/UX design provides a simple and intuitive way for users to book barbershop services. Users can fill out a booking form with their details, preferred date, time, and service. Once submitted, the form will automatically redirect to the barbershop WhatsApp for confirmation. The design ensures a smooth and efficient booking process, combining convenience with direct communication.',
+        image: ui6,
+        client: 'HendBarber',
+        role: 'UI/UX DESIGN',
       }
     ],
     'WEB DEVELOPMENT': [
@@ -74,7 +83,7 @@ const Projectsection = forwardRef((props, ref) => {
         description: 'The UI/UX design for Goakreo, a disease data collection website for healthcare centers, focuses on functionality, clarity, and ease of use. It is designed to empower healthcare workers at puskesmas (community health centers) with an efficient tool for recording, managing, and analyzing disease data to support better public health decisions.',
         image: web1,
         client: 'Sivinaries',
-        role: 'UI/UX DESIGN',
+        role: 'Website Developer',
       },
       {
         title1: 'Web Development',
@@ -82,7 +91,15 @@ const Projectsection = forwardRef((props, ref) => {
         description: 'The Sivinaries company profile website is designed to showcase its expertise as a leading software house, delivering innovative and customized digital solutions. The UI/UX design reflects Sivinaries` professionalism, creativity, and commitment to excellence, ensuring an engaging and user-friendly experience for potential clients and partners.',
         image: web2,
         client: 'Sivinaries',
-        role: 'UI/UX DESIGN',
+        role: 'Website Developer',
+      },
+      {
+        title1: 'Web Development',
+        title2: 'Website Booking Berbershop',
+        description: 'This mobile barbershop booking website is built using React.js, designed to make booking quick and easy. Users can fill out a form with their details, preferred service, date, and time. Once submitted, the form automatically sends the booking information to the barbershop WhatsApp number for confirmation. The design ensures a seamless user experience with fast and direct communication.',
+        image: ui6,
+        client: 'HendBerber',
+        role: 'Website Developer',
       }
     ]
   };
