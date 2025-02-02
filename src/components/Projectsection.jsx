@@ -6,8 +6,10 @@ import ui3 from '../assets/project/uidesign3.webp'
 import ui4 from '../assets/project/uidesign4.webp'
 import ui5 from '../assets/project/uidesign5.webp'
 import ui6 from '../assets/project/uidesign6.webp'
+import ui7 from '../assets/project/travel.webp'
 import web1 from '../assets/project/webdesign1.webp'
 import web2 from '../assets/project/webdesign2.webp'
+import web3 from '../assets/project/joki1.webp'
 
 const Projectsection = forwardRef((props, ref) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -74,6 +76,14 @@ const Projectsection = forwardRef((props, ref) => {
         image: ui6,
         client: 'HendBarber',
         role: 'UI/UX DESIGN',
+      },
+      {
+        title1: 'Web UI Design',
+        title2: 'Website Tavel',
+        description: 'This UI/UX design provides a simple and intuitive way for users to learn about and register for study immersion programs. Users can fill in the registration form with personal details, program options, and schedule. Once submitted, the form will automatically connect to the travel team WhatsApp for confirmation. This design ensures a smooth and efficient process, combining convenience with direct communication.',
+        image: ui7,
+        client: 'Java IndoTrip',
+        role: 'UI/UX DESIGN',
       }
     ],
     'WEB DEVELOPMENT': [
@@ -100,6 +110,14 @@ const Projectsection = forwardRef((props, ref) => {
         image: ui6,
         client: 'HendBerber',
         role: 'Website Developer',
+      },
+      {
+        title1: 'Web Development',
+        title2: 'Sistem Question-Answering',
+        description: 'The creation of this QA (Question Answering) system utilizes the T5 (Text-To-Text Transfer Transformer) model, fine-tuned with a specialized QA dataset. The T5 model is trained to understand the context of questions and generate accurate answers based on the available data. The process includes dataset preprocessing, model training, and performance evaluation to ensure the accuracy and relevance of the answers. This system is designed to provide quick and precise responses, making it suitable for applications such as chatbots, virtual assistants, or educational platforms.',
+        image: web3,
+        client: 'Mahasiswa',
+        role: 'Machine Learning',
       }
     ]
   };
